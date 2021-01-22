@@ -11,8 +11,11 @@
     <canvas id="mainCanvas"></canvas>
     <div id="fadeOutContainer"></div>
 
+    <div id="videoPlayer"><video id="video" src="/video/TubeMan.mp4" muted autoplay loop></video></div>
+
     <div id="controlsContainer">
         <div class="controlBTN" onclick="changeMesh('Gen')">Generator</div>
+        <div class="controlBTN" onclick="loadVideo()" style="cursor: not-allowed;">Video</div>
         <div class="controlBTN" onclick="changeMesh('Fan')">Fan</div>
     </div>
 

@@ -22,12 +22,12 @@ function createScene() {
     var gl = new BABYLON.GlowLayer("glow", scene);
     gl.intensity = 1.5;
 
-    BABYLON.SceneLoader.ImportMesh("", "./models/", "Fan.glb", scene, function(scene) {
-        document.getElementById("fadeOutContainer").style.opacity = 0;
-        setTimeout(function() {
-            // document.getElementById("fadeOutContainer").remove();
-        }, 1000)
-    })
+    // BABYLON.SceneLoader.ImportMesh("", "./models/", "Fan.glb", scene, function(scene) {
+    //     document.getElementById("fadeOutContainer").style.opacity = 0;
+    //     setTimeout(function() {
+    //         // document.getElementById("fadeOutContainer").remove();
+    //     }, 1000)
+    // })
 
     if (window.matchMedia("(max-width: 700px)").matches) {
         camera.detachControl()
@@ -50,6 +50,8 @@ window.addEventListener("resize", function () {
 function changeMesh(meshName) {
 
     document.getElementById("fadeOutContainer").style.opacity = 1;
+    document.getElementById("videoPlayer").style.opacity = 0;
+    document.getElementById("video").pause();
 
     for (i = 0; i < scene.meshes.length; i++) {
         scene.meshes[i].dispose()
@@ -63,3 +65,15 @@ function changeMesh(meshName) {
     })
 
 }
+
+function loadVideo() {
+
+    for (i = 0; i < scene.meshes.length; i++) {
+        scene.meshes[i].dispose()
+    }
+
+    document.getElementById("videoPlayer").style.opacity = 1;
+
+}
+
+changeMesh("Gen")
