@@ -11,12 +11,28 @@
     <canvas id="mainCanvas"></canvas>
     <div id="fadeOutContainer"></div>
 
-    <div id="videoPlayer"><video id="video" src="/video/TubeMan.mp4" muted autoplay loop></video></div>
+    <div id="videoPlayer"><video id="video" src="/videos/TubeMan.mp4" muted autoplay loop></video></div>
+
+    <div id="textContainer">
+        <div id="textHolder">
+            <h1>Raw 3D Data</h1>
+            <h2>Vertices</h2>
+            <p id="verts"></p>
+            <h2>Faces</h2>
+            <p id="faces"></p>
+            <h2>Tris</h2>
+            <p id="tris"></p>
+        </div>
+    </div>
 
     <div id="controlsContainer">
-        <div class="controlBTN" onclick="changeMesh('Gen')">Generator</div>
-        <div class="controlBTN" onclick="" style="cursor: not-allowed;">Video</div>
-        <div class="controlBTN" onclick="changeMesh('Fan')">Fan</div>
+        <div class="controlBTN" onclick="changeMesh('Gen.glb')">Generator</div>
+        <div class="controlBTN" onclick="loadData('Gen')">Generator Data</div>
+        <div class="controlBTN" onclick="changeMesh('Fan.glb')">Fan</div>
+        <div class="controlBTN" onclick="loadData('Fan')">Fan Data</div>
+        <div class="controlBTN" onclick="changeMesh('petrol.glb')">Petrol</div>
+        <div class="controlBTN" onclick="loadData('Petrol')">Petrol Data</div>
+        <div class="controlBTN" onclick="loadVideo()">Video</div>
     </div>
 
     <script src="js/babylon.js"></script>

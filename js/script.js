@@ -49,6 +49,7 @@ window.addEventListener("resize", function () {
 
 function changeMesh(meshName) {
 
+    document.getElementById("textContainer").style.opacity = 0;
     document.getElementById("fadeOutContainer").style.opacity = 1;
     document.getElementById("videoPlayer").style.opacity = 0;
     document.getElementById("video").pause();
@@ -57,7 +58,7 @@ function changeMesh(meshName) {
         scene.meshes[i].dispose()
     }
 
-    BABYLON.SceneLoader.ImportMesh("", "./models/", meshName+".glb", scene, function(scene) {
+    BABYLON.SceneLoader.ImportMesh("", "./models/", meshName, scene, function(scene) {
         document.getElementById("fadeOutContainer").style.opacity = 0;
         setTimeout(function() {
             // document.getElementById("fadeOutContainer").remove();
@@ -66,14 +67,38 @@ function changeMesh(meshName) {
 
 }
 
+
 function loadVideo() {
 
     for (i = 0; i < scene.meshes.length; i++) {
         scene.meshes[i].dispose()
     }
 
+    document.getElementById("textContainer").style.opacity = 0;
     document.getElementById("videoPlayer").style.opacity = 1;
-
+    document.getElementById("video").play();
 }
 
-changeMesh("Gen")
+changeMesh("Gen.glb")
+
+
+var modelData = {
+    "Gen": ["133,824", "133,706", "267,412"],
+    "Fan": ["8,169", "8,944", "8,944"],
+    "Petrol": ["52,237", "51,500", "51,500"]
+}
+
+function loadData(model) {
+    var verts = document.getElementById("verts")
+    var faces = document.getElementById("faces")
+    var tris = document.getElementById("tris")
+    
+    let data = modelData[model];
+    
+    verts.innerHTML = data[0];
+    faces.innerHTML = data[1];
+    tris.innerHTML = data[2];
+    
+    document.getElementById("textContainer").style.opacity = 1;
+
+}
