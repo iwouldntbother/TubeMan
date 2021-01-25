@@ -3,36 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TubeMan</title>
+    <title>Generator</title>
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">Generator</h1>
+            <div class="content"><img src="/images/gen.jpg" alt=""></div>
+        </div>
+    </div>
     
-    <canvas id="mainCanvas"></canvas>
-    <div id="fadeOutContainer"></div>
-
-    <div id="videoPlayer"><video id="video" src="/videos/TubeMan.mp4" muted autoplay loop></video></div>
-
-    <div id="textContainer">
-        <div id="textHolder">
-            <h1>Raw 3D Data</h1>
-            <h2>Vertices</h2>
-            <p id="verts"></p>
-            <h2>Faces</h2>
-            <p id="faces"></p>
-            <h2>Tris</h2>
-            <p id="tris"></p>
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">3D Model</h1>
+            <div class="content"><canvas id="mainCanvas"></canvas></div>
         </div>
     </div>
 
-    <div id="controlsContainer">
-        <div class="controlBTN" onclick="changeMesh('Gen.glb')">Generator</div>
-        <div class="controlBTN" onclick="loadData('Gen')">Generator Data</div>
-        <div class="controlBTN" onclick="changeMesh('Fan.glb')">Fan</div>
-        <div class="controlBTN" onclick="loadData('Fan')">Fan Data</div>
-        <div class="controlBTN" onclick="changeMesh('petrol.glb')">Petrol</div>
-        <div class="controlBTN" onclick="loadData('Petrol')">Petrol Data</div>
-        <div class="controlBTN" onclick="loadVideo()">Video</div>
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">UV Texture</h1>
+            <div class="content"><img src="/images/GeneratorUV.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">Raw 3D Data</h1>
+            <div class="content">
+                <h2>Vertices</h2>
+                <p>133,824</p>
+                <h2>Faces</h2>
+                <p>133,706</p>
+                <h2>Tris</h2>
+                <p>267,412</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">Being used</h1>
+            <div class="content"><video src="/videos/TubeMan2.mp4" controls autoplay loop muted></video></div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">3D Model</h1>
+            <div class="content"><canvas id="secondCanvas"></canvas></div>
+        </div>
+    </div>
+
+    <div class="cont">
+        <div class="holder">
+            <h1 class="title">Pollution</h1>
+            <div class="content"><img src="/images/Pollution.png" alt=""></div>
+        </div>
     </div>
 
     <script src="js/babylon.js"></script>
@@ -40,3 +69,9 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+<!-- 
+
+    Generator
+
+ -->
